@@ -1,0 +1,25 @@
+<div id="previewDialogue" class="cut">
+
+    <button class="close-reveal-modal close"></button>
+
+    <div style="clear:both"></div>
+
+    <div class="video"></div>
+
+    <div class="controls">
+        <div class="info">
+            <button data-cmd="jumpToIn">Go to In-Marker ({{this.inFrame}})</button>
+            <button data-cmd="jumpToOut">Go to Out-Marker ({{ this.outFrame}})</button>
+        </div>
+        <div class="buttonbar">
+            <button class="frameRewind" data-cmd="frameRewind"></button>
+            <button class="framePrev" data-cmd="framePrev"></button>
+            <button class="frameIn" data-cmd="frameIn"></button>
+            <button class="play" data-cmd="togglePlay"></button>
+            <button class="frameOut" data-cmd="frameOut"></button>
+            <button class="frameNext" data-cmd="frameNext"></button>
+            <button class="frameForward" data-cmd="frameForward"></button>
+        </div>
+    </div>
+
+</div>

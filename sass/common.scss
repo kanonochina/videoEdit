@@ -1,0 +1,45 @@
+@import 'globals';
+@import 'buttons';
+@import 'layout';
+@import 'elements/header';
+@import 'elements/navigator';
+@import 'elements/stage';
+@import 'elements/timeline';
+@import 'elements/noscript';
+@import 'elements/_dialogues';
+@import "compass";
+@import "compass/css3/user-interface";
+
+/* GLOBALS */
+
+* {
+  @include box-sizing('border-box');
+  @include user-select(none);
+
+  //webkit mobile specific
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  color: $textColor;
+  font-family: 'Gudea', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-size: 100%;
+  background-color: $bodyBackgroundColor;
+}
+
+[contenteditable]:hover,
+[contenteditable]:focus {
+  @include user-select(text);
+  outline: 1px dotted $lineColor;
+}
+
+input[type=text],
+input[type=number] {
+  @include user-select(text);
+}
+

@@ -1,0 +1,38 @@
+<div class="asset {{this.type}}" id="{{this._id}}">
+    <div class="info">
+        <span class="name"> {{this.name}}</span>
+        <span class="status">{{this.status}}</span>
+        <progress value="{{this.progress}}" max="100"></progress>
+
+        {{#if hasMetaData}}
+
+        <span class="timecode">{{this.timecode}}</span>
+
+        {{#if fps}}
+        <span class="fps"> @{{roundNumber this.fps}}fps</span>
+        {{/if}}
+
+        {{#if_eq this.type compare="video"}}
+        <span class="ratio">&nbsp; AR &nbsp;{{roundNumber this.ratio}}&nbsp;:&nbsp;1</span>
+        <span class="dimensions">&nbsp;[{{this.width}}x{{this.height}}]</span>
+        {{/if_eq}}
+
+        {{/if}}
+
+
+    </div>
+    <div class="types">
+
+        {{#if_eq this.type compare="video"}}
+        <span class='mp4{{#has_not this.extensions value="mp4"}} disabled{{/has_not}}' title="H.264/MPEG-4 AVC"></span>
+        <span class='webm{{#has_not this.extensions value="webm"}} disabled{{/has_not}}' title="WebM (VP8)"></span>
+        <span class='ogg{{#has_not this.extensions value="ogg"}} disabled{{/has_not}}' title="Ogg Vorbis"></span>
+        {{/if_eq}}
+
+        {{#if_eq this.type compare="audio"}}
+        <span class='ogg{{#has_not this.extensions value="ogg"}} disabled{{/has_not}}'></span>
+        {{/if_eq}}
+
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+@import "compass";
+@import "sassybuttons";
+
+/**
+VARIABLES
+**/
+$textColor: rgba(0, 0, 0, 1);
+$lineColor: rgba(192, 192, 192, 1);
+
+$highlightColor: rgba(89, 166, 255, 0.3);
+$activeColor: rgba(89, 166, 255, 0.1);
+$selectedColor : rgba(89, 166, 255, 0.8);
+
+$progressBarStandardColor: rgba(170, 170, 170, 1);
+$progressBarActiveColor: rgba(89, 166, 255, 1);
+
+$bodyBackgroundColor: rgba(214,214,214, 1);
+$headerBackgroundColor: $bodyBackgroundColor;
+$navigatorBackgroundColor: $bodyBackgroundColor;
+$stageBackgroundColor: rgba(39, 40, 34, 0.7);
+$timelineBackgroundColor: rgba(190, 190, 190, 1);
+$sliderBackgroundColor: $bodyBackgroundColor;
+
+$assetListBackgroundColor: rgba(255, 255, 255, 1);
+$compositionListBackgroundColor: $assetListBackgroundColor;
+$layerBackgroundColor: $bodyBackgroundColor;
+
+$videoColor: rgba(94, 141, 182, 1);
+$audioColor: rgba(211, 228, 124, 1);
+$imageColor: rgb(82, 188, 76);
+
+$cancelColor: rgba(48, 48, 48, 1);
+$acceptColor: rgba(75, 163, 204, 1);
+
+/* MIXINS */
+
+@mixin toolbar {
+  @include background-image(linear-gradient(rgba(224, 224, 224, 1), rgba(198, 198, 198, 1)));
+}
+
+@mixin toolbarHover {
+ @include background-image(linear-gradient(rgba(191, 191, 191, 1), rgba(135, 135, 135, 1)));
+}
+

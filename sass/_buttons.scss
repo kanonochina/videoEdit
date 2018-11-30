@@ -1,0 +1,153 @@
+@import 'globals';
+
+button {
+
+  @include transition(opacity 0.3s ease-out);
+  @include background-size(100%, 100%);
+
+  display: block;
+  height: 100%;
+  min-height: 32px;
+  min-width: 32px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-origin: content;
+  opacity: 1;
+  margin-left: 3px;
+
+  &:focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+
+  &:hover {
+    @include transform(scale(1.1));
+    cursor: pointer;
+  }
+
+  &:active{
+    @include transform(scale(0.8));
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.4;
+  }
+  &[disabled]:hover {
+    cursor: default;
+  }
+}
+
+button.open {
+  background-image: url("../img/icon_open.svg");
+}
+
+button.close{
+  background-image: url("../img/icon_close.svg");
+}
+
+button.settings {
+  background: url('../img/icon_settings.svg');
+  margin-right: 10px;
+}
+
+button.share {
+  background: url('../img/icon_share.svg');
+  margin-right: 5px;
+}
+
+button.add {
+  background: url('../img/icon_add.svg');
+}
+
+button.remove {
+  background: url('../img/icon_remove.svg');
+
+  &:active{
+    @include transition(transform 0.3s ease-out);
+    @include transform(rotate(90deg));
+  }
+}
+
+button.play {
+  background: url('../img/icon_play.svg');
+}
+
+button.pause {
+  background: url('../img/icon_pause.svg');
+}
+
+button.upload {
+  background-image: url("../img/icon_upload.svg");
+}
+
+button.encode {
+  background-image: url("../img/icon_encode.svg");
+}
+
+button.download {
+  background-image: url("../img/icon_download.svg");
+}
+
+button.left {
+  background-image: url("../img/icon_left.svg");
+}
+
+button.right {
+  background-image: url("../img/icon_right.svg");
+}
+
+button.up {
+  background-image: url("../img/icon_up.svg");
+}
+
+button.down {
+  background-image: url("../img/icon_down.svg");
+}
+
+//http://iconmonstr.com/fullscreen-5-icon/
+button.fullscreen {
+  background-image: url("../img/icon_fullscreen.svg");
+  margin-right: 5px;
+}
+
+//http://iconmonstr.com/undo-5-icon/
+button.undo {
+  background-image: url("../img/icon_undo.svg");
+}
+
+//http://thenounproject.com/noun/scissors/#icon-No5108
+button.cut {
+  background-image: url("../img/icon_cut.svg");
+}
+
+button.frameIn {
+  background-image: url("../img/icon_frame_in.svg");
+}
+
+button.frameOut {
+  background-image: url("../img/icon_frame_out.svg");
+}
+
+button.frameNext {
+  background-image: url("../img/icon_frame_next.svg");
+}
+
+button.framePrev {
+  background-image: url("../img/icon_frame_prev.svg");
+}
+
+button.frameForward {
+  background-image: url("../img/icon_frame_forward.svg");
+}
+
+button.frameRewind {
+  background-image: url("../img/icon_frame_rewind.svg");
+}
+
+
+
+
+

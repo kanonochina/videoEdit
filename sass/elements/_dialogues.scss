@@ -1,0 +1,309 @@
+@import "../globals";
+
+#dialogue {
+  display: none;
+
+  h1 {
+    font-size: 1.3em;
+    float: left;
+  }
+
+  p {
+    clear: both;
+    padding: 10px 1px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    float: left;
+  }
+
+  input, select {
+
+  }
+
+  select {
+    width: 188px;
+  }
+
+  input[type=number] {
+    width: 80px;
+    text-align: center;
+  }
+
+  fieldset {
+    clear: both;
+    width: 100%;
+    padding: 10px;
+
+    legend {
+      font-weight: bold;
+
+      label {
+        float: none;
+      }
+    }
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  button.okay,
+  button.cancel {
+    margin-top: 15px;
+  }
+
+  button.okay {
+    float: right;
+    border: 1px solid red;
+    @include sassy-button("simple", 3px, 16px, $acceptColor);
+  }
+
+  button.cancel {
+    float: right;
+    border: 1px solid green;
+    @include sassy-button("simple", 3px, 16px, $cancelColor);
+  }
+
+}
+
+#createComposition {
+
+  input, select {
+    float: right;
+    margin: 3px 0px;
+  }
+
+  #name {
+    width: 200px;
+  }
+  #ratioLabel {
+    float: left;
+  }
+  #ratio {
+    float: right;
+  }
+}
+
+#projectBrowser {
+
+  input[type=text] {
+    float: right;
+    width: 250px;
+  }
+
+  ul {
+    list-style: none;
+    overflow-y: auto;
+    max-height: 200px;
+
+    li {
+      height: 36px;
+      width: 100%;
+      border: 1px solid $lineColor;
+      border-bottom: none;
+      line-height: 36px;
+      background-color: $activeColor;
+      line-height: 36px;
+
+      &:last-child {
+        border-bottom: 1px solid $lineColor;
+      }
+
+      &.selected {
+        background-color: $selectedColor;
+      }
+
+      input[type=radio] {
+        width: 30px;
+        height: 100%;
+        float: left;
+        margin-left: 10px;
+      }
+
+      label {
+        float: left;
+        width: 350px;
+
+        span.title {
+          float: left;
+          width: 240px;
+          overflow: hidden;
+          display: block;
+          word-wrap: break-word;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        span.date {
+          float: right;
+          margin-top: 13px;
+          line-height: 0.85em;
+          font-size: 0.85em;
+          color: #837F7F;
+        }
+      }
+      button {
+        float: right;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+#previewDialogue {
+
+  .video {
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+
+    video {
+      max-width: 100%;
+      height: auto;
+      max-height: 450px;
+    }
+  }
+
+  //Cutting-Modus
+  &.cut {
+    .controls {
+      display: block;
+
+      input {
+        width: 100%;
+      }
+
+      .info {
+        margin: 10px auto;
+        clear: both;
+        text-align: center;
+
+        button {
+          @include sassy-button("simple", 3px, 16px, $acceptColor);
+        }
+      }
+
+      .buttonbar {
+        clear: both;
+        width: 305px;
+        height: 34px;
+        margin: 0 auto;
+
+        button {
+          float: left;
+          margin-right: 8px;
+        }
+      }
+
+    }
+  }
+
+  //Preview-Modus
+  &.view {
+    .controls {
+      display: none;
+    }
+  }
+
+}
+
+#settings {
+  input {
+    float: left;
+    clear: both;
+    margin: 4px 5px 0 0;
+  }
+
+  label {
+    float: left
+  }
+}
+
+#exportProject {
+
+  h2 {
+    clear: both;
+    font-size: 1.2em;
+  }
+  #qrcode {
+    float: left;
+    width: 165px;
+    margin: 20px 0 0 20px;
+    display: block;
+
+    canvas {
+      width: 100%
+    }
+  }
+
+  .desc {
+    margin-top: 20px;
+    width: 50%;
+    float: left;
+    p {
+      padding: 0 0 0 52px;
+    }
+  }
+
+  input {
+    clear: both;
+    width: 410px;
+    margin: 10px 0 0 20px;
+  }
+
+  button.okay {
+    clear: both;
+  }
+
+}
+
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+
+.reveal-modal-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  background: rgba(0, 0, 0, .8);
+  z-index: 100;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+.reveal-modal {
+  background-color: $bodyBackgroundColor;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1001;
+  padding: 30px;
+  @include border-radius(5px);
+  @include box-shadow(0 0 10px rgba(0, 0, 0, .4));
+
+  &.standard {
+    top: 100px;
+    left: 50%;
+    margin-left: -270px;
+    width: 540px;
+  }
+
+  &.fullscreen {
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+}
+
+.reveal-modal .close-reveal-modal {
+  float: right;
+  cursor: pointer;
+}
+
